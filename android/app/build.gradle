@@ -1,0 +1,47 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+    id "com.google.gms.google-services"
+}
+
+android {
+    namespace = "com.example.aplikasiku"
+    compileSdk = flutter.compileSdkVersion
+    ndkVersion = flutter.ndkVersion
+
+android {
+  compileSdkVersion 34
+
+  defaultConfig {
+    applicationId "com.aplikasiku"
+    minSdkVersion 23
+    targetSdkVersion 33
+
+    // Menambahkan flutterVersionCode dan flutterVersionName
+    versionCode 1 // Anda bisa menambahkannya sesuai dengan versi aplikasi Anda
+    versionName "1.0.0" // Versi aplikasi Anda (misalnya "1.0.0")
+  }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+}
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
+
+apply plugin: 'com.google.gms.google-services'
